@@ -1,13 +1,33 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #e1e1e1;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+  margin: 20px auto;
+  max-width: 950px;
+  overflow-wrap: anywhere;
+}
+
+button {
+  cursor: pointer;
+}
+
+.addTask {
+  background-color: white;
+  margin: 0 20px;
+}
+
+.taskList {
+  background-color: white;
+  padding-bottom: 20px;
+  margin: 0 20px;
 }
