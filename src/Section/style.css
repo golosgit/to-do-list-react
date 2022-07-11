@@ -1,4 +1,4 @@
-.secondaryHeader {
+.section {
   border-bottom: 1px solid #ddd;
   padding: 15px 20px;
   margin-bottom: 0;
@@ -9,7 +9,7 @@
 }
 
 @media (max-width: 767px) {
-  .secondaryHeader {
+  .section {
     grid-template-columns: 1fr;
     grid-gap: 15px;
   }

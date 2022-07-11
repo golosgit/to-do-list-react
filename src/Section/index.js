@@ -1,8 +1,8 @@
 import "./style.css";
 
-const SecondaryHeader = ({ title, extraSectionButtons, extraSectionContent }) => (
+const Section = ({ title, extraSectionButtons, extraSectionContent }) => (
   <section>
-    <h2 className="secondaryHeader">
+    <h2 className="section">
       {title}
       {extraSectionButtons}
     </h2>
@@ -10,4 +10,4 @@ const SecondaryHeader = ({ title, extraSectionButtons, extraSectionContent }) =>
   </section>
 );
 
-export default SecondaryHeader;
+export default Section;
