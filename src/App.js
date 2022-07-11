@@ -1,7 +1,7 @@
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
-import SecondaryHeader from "./SecondaryHeader";
+import Section from "./Section";
 import Header from "./Header";
 
 const taskList = [
@@ -16,21 +16,21 @@ function App() {
     <>
       <Header title="Lista zadań"/>
       <div className="addTask">
-        <SecondaryHeader 
+        <Section 
           title="Dodaj nowe zadanie" 
-          extraHeaderContent={<Form />}
+          extraSectionContent={<Form />}
         />
       </div>
       <div className="taskList">
-        <SecondaryHeader 
+        <Section 
           title="Lista zadań" 
-          extraHeaderButtons={
+          extraSectionButtons={
             <Buttons 
               taskList={taskList} 
               visibilityOfFinishedTasks={visibilityOfFinishedTasks}
             />
           }
-          extraHeaderContent={
+          extraSectionContent={
             <Tasks 
               taskList={taskList} 
               visibilityOfFinishedTasks={visibilityOfFinishedTasks}

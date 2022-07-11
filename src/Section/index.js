@@ -1,12 +1,12 @@
 import "./style.css";
 
-const SecondaryHeader = ({ title, extraHeaderButtons, extraHeaderContent }) => (
+const SecondaryHeader = ({ title, extraSectionButtons, extraSectionContent }) => (
   <section>
     <h2 className="secondaryHeader">
       {title}
-      {extraHeaderButtons}
+      {extraSectionButtons}
     </h2>
-    {extraHeaderContent}
+    {extraSectionContent}
   </section>
 );
 
