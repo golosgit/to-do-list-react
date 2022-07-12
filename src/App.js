@@ -25,11 +25,15 @@ function App() {
   };
 
   const removeTask = (id) => {
-    setList(taskList => taskList.filter(task => task.id !== id));
+    setList((taskList) => taskList.filter((task) => task.id !== id));
   };
 
   const toggleVisibility = () => {
-    setVisibility(visibilityOfFinishedTasks => !visibilityOfFinishedTasks);
+    setVisibility((visibilityOfFinishedTasks) => !visibilityOfFinishedTasks);
+  };
+
+  const finishAllTasks = () => {
+    setList((taskList) => taskList.map((task) => ({ ...task, status: true })));
   };
 
   return (
@@ -42,17 +46,19 @@ function App() {
         <Section
           title="Lista zadań"
           extraSectionButtons={
-            <Buttons 
-              taskList={taskList} 
-              visibilityOfFinishedTasks={visibilityOfFinishedTasks} 
+            <Buttons
+              taskList={taskList}
+              visibilityOfFinishedTasks={visibilityOfFinishedTasks}
               toggleVisibility={toggleVisibility}
-            />}
+              finishAllTasks={finishAllTasks}
+            />
+          }
           extraSectionContent={
-            <Tasks 
-              toggleTaskDone={toggleTaskDone} 
+            <Tasks
+              toggleTaskDone={toggleTaskDone}
               removeTask={removeTask}
-              taskList={taskList} 
-              visibilityOfFinishedTasks={visibilityOfFinishedTasks} 
+              taskList={taskList}
+              visibilityOfFinishedTasks={visibilityOfFinishedTasks}
             />
           }
         />
