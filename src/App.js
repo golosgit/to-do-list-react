@@ -24,6 +24,10 @@ function App() {
     );
   };
 
+  const removeTask = (id) => {
+    setList(taskList => taskList.filter(task => task.id !== id));
+  };
+
   return (
     <>
       <Header title="Lista zadań" />
@@ -41,6 +45,7 @@ function App() {
           extraSectionContent={
             <Tasks 
               toggleTaskDone={toggleTaskDone} 
+              removeTask={removeTask}
               taskList={taskList} 
               visibilityOfFinishedTasks={visibilityOfFinishedTasks} 
             />
