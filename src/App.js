@@ -5,13 +5,13 @@ import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
 
-const visibilityOfFinishedTasks = true;
-
 function App() {
   const [taskList, setList] = useState([
     { id: 1, content: "Task 1", status: true },
     { id: 2, content: "Task 2", status: false },
   ]);
+
+  const [visibilityOfFinishedTasks, setVisibility] = useState(true);
 
   const toggleTaskDone = (id) => {
     setList((taskList) =>
@@ -28,6 +28,10 @@ function App() {
     setList(taskList => taskList.filter(task => task.id !== id));
   };
 
+  const toggleVisibility = () => {
+    setVisibility(visibilityOfFinishedTasks => !visibilityOfFinishedTasks);
+  };
+
   return (
     <>
       <Header title="Lista zadań" />
@@ -41,6 +45,7 @@ function App() {
             <Buttons 
               taskList={taskList} 
               visibilityOfFinishedTasks={visibilityOfFinishedTasks} 
+              toggleVisibility={toggleVisibility}
             />}
           extraSectionContent={
             <Tasks 
