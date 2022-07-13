@@ -10,8 +10,7 @@ https://golosgit.github.io/to-do-list-react/
 
 ## General info
 
-Simple to do list that help with managing tasks (add, delete, toggle done/undone). At this moment list does not
-support any events/interactions.
+Simple to do list that help with managing tasks (add, delete, toggle done/undone). 
 
 ## Technologies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
