@@ -6,10 +6,7 @@ import Section from "./Section";
 import Header from "./Header";
 
 function App() {
-  const [taskList, setList] = useState([
-    { id: 1, content: "Task 1", status: true },
-    { id: 2, content: "Task 2", status: false },
-  ]);
+  const [taskList, setList] = useState([]);
 
   const [visibilityOfFinishedTasks, setVisibility] = useState(true);
 
@@ -36,11 +33,24 @@ function App() {
     setList((taskList) => taskList.map((task) => ({ ...task, status: true })));
   };
 
+  const addNewTask = (newTaskContent) => {
+    if (newTaskContent) {
+      setList((taskList) => [
+        ...taskList,
+        {
+          id: taskList.length ? taskList[taskList.length - 1].id + 1 : 1,
+          content: newTaskContent,
+          status: false,
+        },
+      ]);
+    }
+  };
+
   return (
     <>
       <Header title="Lista zadań" />
       <div className="addTask">
-        <Section title="Dodaj nowe zadanie" extraSectionContent={<Form />} />
+        <Section title="Dodaj nowe zadanie" extraSectionContent={<Form addNewTask={addNewTask} />} />
       </div>
       <div className="taskList">
         <Section
