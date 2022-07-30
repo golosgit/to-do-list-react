@@ -49,30 +49,31 @@ function App() {
   return (
     <>
       <Header title="Lista zadań" />
-      <div className="addTask">
-        <Section title="Dodaj nowe zadanie" extraSectionContent={<Form addNewTask={addNewTask} />} />
-      </div>
-      <div className="taskList">
-        <Section
-          title="Lista zadań"
-          extraSectionButtons={
-            <Buttons
-              taskList={taskList}
-              visibilityOfFinishedTasks={visibilityOfFinishedTasks}
-              toggleVisibility={toggleVisibility}
-              finishAllTasks={finishAllTasks}
-            />
-          }
-          extraSectionContent={
-            <Tasks
-              toggleTaskDone={toggleTaskDone}
-              removeTask={removeTask}
-              taskList={taskList}
-              visibilityOfFinishedTasks={visibilityOfFinishedTasks}
-            />
-          }
-        />
-      </div>
+      <Section 
+        className="addTask" 
+        title="Dodaj nowe zadanie" 
+        extraSectionContent={<Form addNewTask={addNewTask} />} 
+      />
+      <Section
+        className="taskList"
+        title="Lista zadań"
+        extraSectionButtons={
+          <Buttons
+            taskList={taskList}
+            visibilityOfFinishedTasks={visibilityOfFinishedTasks}
+            toggleVisibility={toggleVisibility}
+            finishAllTasks={finishAllTasks}
+          />
+        }
+        extraSectionContent={
+          <Tasks
+            toggleTaskDone={toggleTaskDone}
+            removeTask={removeTask}
+            taskList={taskList}
+            visibilityOfFinishedTasks={visibilityOfFinishedTasks}
+          />
+        }
+      />
     </>
   );
 }

@@ -20,14 +20,3 @@ body {
 button {
   cursor: pointer;
 }
-
-.addTask {
-  background-color: white;
-  margin: 0 20px;
-}
-
-.taskList {
-  background-color: white;
-  padding-bottom: 20px;
-  margin: 0 20px;
-}
