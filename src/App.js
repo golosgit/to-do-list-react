@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
@@ -6,7 +6,14 @@ import Section from "./Section";
 import Header from "./Header";
 
 function App() {
-  const [taskList, setList] = useState([]);
+  const [taskList, setList] = useState(
+    JSON.parse(localStorage.getItem("taskList")) ? 
+      JSON.parse(localStorage.getItem("taskList")) : []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("taskList", JSON.stringify(taskList));
+  }, [taskList]);
 
   const [visibilityOfFinishedTasks, setVisibility] = useState(true);
 
@@ -49,11 +56,7 @@ function App() {
   return (
     <>
       <Header title="Lista zadań" />
-      <Section 
-        className="addTask" 
-        title="Dodaj nowe zadanie" 
-        extraSectionContent={<Form addNewTask={addNewTask} />} 
-      />
+      <Section className="addTask" title="Dodaj nowe zadanie" extraSectionContent={<Form addNewTask={addNewTask} />} />
       <Section
         className="taskList"
         title="Lista zadań"
