@@ -1,22 +1,19 @@
-import "./style.css";
+import { Button } from "./styled.js";
 
-const Buttons = ({ taskList, visibilityOfFinishedTasks, toggleVisibility, finishAllTasks }) =>
+export const Buttons = ({ taskList, visibilityOfFinishedTasks, toggleVisibility, finishAllTasks }) => {
   taskList.length > 0 && (
     <>
-      <button 
-        onClick={toggleVisibility} 
-        className="buttons__button"
+      <Button 
+        onClick={toggleVisibility}
       >
-        {visibilityOfFinishedTasks ? "Ukryj" : "Pokaż"} ukończone
-      </button>
-      <button 
+        {visibilityOfFinishedTasks ? "Ukryj" : "Pokaż"}&nbsp;ukończone
+      </Button>
+      <Button 
         onClick={finishAllTasks} 
-        className="buttons__button" 
         disabled={taskList.every(({ status }) => status)}
       >
         Ukończ wszystkie
-      </button>
+      </Button>
     </>
   );
-
-export default Buttons;
+};
