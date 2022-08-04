@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./style.css";
+import { FormBody, Input, Button } from "./styled.js";
 
-const Form = ({ addNewTask }) => {
+export const Form = ({ addNewTask }) => {
   const [newTaskContent, setNewTaskContent] = useState("");
 
   const onFormSubmit = (event) => {
@@ -11,16 +11,13 @@ const Form = ({ addNewTask }) => {
   };
 
   return (
-    <form className="form" onSubmit={onFormSubmit}>
-      <input
+    <FormBody onSubmit={onFormSubmit}>
+      <Input
         value={newTaskContent}
         onChange={({ target }) => setNewTaskContent(target.value)}
-        className="form__input"
         placeholder="Co jest do zrobienia?"
       />
-      <button className="form__button">Dodaj zadanie</button>
-    </form>
+      <Button>Dodaj zadanie</Button>
+    </FormBody>
   );
 };
-
-export default Form;
