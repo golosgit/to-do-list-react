@@ -1,9 +1,7 @@
-import "./style.css";
+import { HeaderTitle } from "./styled.js";
 
-const Header = ({title}) => (
-  <header className="header">
-      <h1>{title}</h1>
-  </header>
+export const Header = ({ title }) => (
+  <HeaderTitle>
+    <h1>{title}</h1>
+  </HeaderTitle>
 );
-
-export default Header;

@@ -3,12 +3,12 @@ import Form from "./Form";
 import { Tasks } from "./Tasks";
 import Buttons from "./Buttons";
 import Section from "./Section";
-import Header from "./Header";
+import { Header } from "./Header";
 
 function App() {
   const [taskList, setList] = useState(
     JSON.parse(localStorage.getItem("taskList")) ? 
-      JSON.parse(localStorage.getItem("taskList")) : []
+    JSON.parse(localStorage.getItem("taskList")) : []
   );
 
   useEffect(() => {
