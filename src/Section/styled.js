@@ -1,4 +1,6 @@
-.section {
+import styled, { css } from "styled-components";
+
+export const Content = styled.h2`
   border-bottom: 1px solid #ddd;
   padding: 15px 20px;
   margin-bottom: 0;
@@ -6,22 +8,20 @@
   display: grid;
   grid-template-columns: 1fr auto auto;
   grid-gap: 25px;
-}
 
-@media (max-width: 767px) {
-  .section {
+  @media (max-width: 767px) {
     grid-template-columns: 1fr;
     grid-gap: 15px;
   }
-}
+`;
 
-.addTask {
+export const StyledSection = styled.div`
   background-color: white;
   margin: 0 20px;
-}
 
-.taskList {
-  background-color: white;
-  padding-bottom: 20px;
-  margin: 0 20px;
-}
+  ${({ listSection }) =>
+    listSection &&
+    css`
+      padding-bottom: 20px;
+    `}
+`;

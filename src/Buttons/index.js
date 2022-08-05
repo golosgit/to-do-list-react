@@ -1,6 +1,6 @@
 import { Button } from "./styled.js";
 
-export const Buttons = ({ taskList, visibilityOfFinishedTasks, toggleVisibility, finishAllTasks }) => {
+export const Buttons = ({ taskList, visibilityOfFinishedTasks, toggleVisibility, finishAllTasks }) =>
   taskList.length > 0 && (
     <>
       <Button 
@@ -16,4 +16,3 @@ export const Buttons = ({ taskList, visibilityOfFinishedTasks, toggleVisibility,
       </Button>
     </>
   );
-};

@@ -1,15 +1,13 @@
-import "./style.css";
+import { Content, StyledSection } from "./styled.js";
 
-const Section = ({ className, title, extraSectionButtons, extraSectionContent }) => (
-  <div className={className}>
+export const Section = ({ listSection, title, extraSectionButtons, extraSectionContent }) => (
+  <StyledSection listSection={listSection}>
     <section>
-      <h2 className="section">
+      <Content>
         {title}
         {extraSectionButtons}
-      </h2>
+      </Content>
       {extraSectionContent}
     </section>
-  </div>
+  </StyledSection>
 );
-
-export default Section;

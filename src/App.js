@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Form } from "./Form";
 import { Tasks } from "./Tasks";
 import { Buttons } from "./Buttons";
-import Section from "./Section";
+import { Section } from "./Section";
 import { Header } from "./Header";
 
 function App() {
@@ -56,9 +56,12 @@ function App() {
   return (
     <>
       <Header title="Lista zadań" />
-      <Section className="addTask" title="Dodaj nowe zadanie" extraSectionContent={<Form addNewTask={addNewTask} />} />
+      <Section 
+        title="Dodaj nowe zadanie" 
+        extraSectionContent={<Form addNewTask={addNewTask} />} 
+      />
       <Section
-        className="taskList"
+        listSection
         title="Lista zadań"
         extraSectionButtons={
           <Buttons
