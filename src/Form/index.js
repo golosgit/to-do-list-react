@@ -16,6 +16,7 @@ export const Form = ({ addNewTask }) => {
     <FormBody onSubmit={onFormSubmit}>
       <Input
         ref={inputRef}
+        autoFocus
         value={newTaskContent}
         onChange={({ target }) => setNewTaskContent(target.value)}
         placeholder="Co jest do zrobienia?"
