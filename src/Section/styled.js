@@ -15,7 +15,7 @@ export const Content = styled.h2`
   }
 `;
 
-export const StyledSection = styled.div`
+export const StyledSection = styled.section`
   background-color: white;
   margin: 0 20px;
 
