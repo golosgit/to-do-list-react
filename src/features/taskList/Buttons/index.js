@@ -1,4 +1,4 @@
-import { Button } from "./styled.js";
+import { Button } from "./styled";
 
 export const Buttons = ({ taskList, visibilityOfFinishedTasks, toggleVisibility, finishAllTasks }) =>
   taskList.length > 0 && (

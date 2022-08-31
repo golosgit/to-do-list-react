@@ -1,4 +1,4 @@
-import { Content, StyledSection } from "./styled.js";
+import { Content, StyledSection } from "./styled";
 
 export const Section = ({ listSection, title, extraSectionButtons, extraSectionContent }) => (
   <StyledSection listSection={listSection}>

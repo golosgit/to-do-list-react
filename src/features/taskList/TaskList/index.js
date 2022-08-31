@@ -1,6 +1,6 @@
-import { List, ListItem, Content, Button } from "./styled.js";
+import { List, ListItem, Content, Button } from "./styled";
 
-export const Tasks = ({ taskList, visibilityOfFinishedTasks, toggleTaskDone, removeTask }) => (
+export const TaskList = ({ taskList, visibilityOfFinishedTasks, toggleTaskDone, removeTask }) => (
   <List>
     {taskList.map((task) => (
       <ListItem key={task.id} hidden={task.status && !visibilityOfFinishedTasks}>
