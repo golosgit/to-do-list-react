@@ -12,6 +12,7 @@ export const Form = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     if (!newTaskContent.trim()) {
+      inputRef.current.focus();
       return;
     }
     dispatch(addTask({
