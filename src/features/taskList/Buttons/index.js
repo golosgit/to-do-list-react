@@ -1,13 +1,21 @@
 import { Button } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, toggleVisibility, finishAllTasks } from "../taskListSlice";
+import { 
+  toggleVisibility, 
+  finishAllTasks, 
+  selectVisibilityOfFinishedTasks, 
+  selectTaskListLength, 
+  selectIsEveryTaskDone
+} from "../taskListSlice";
 
 export const Buttons = () => {
   const dispatch = useDispatch();
-  const { taskList, visibilityOfFinishedTasks } = useSelector(selectTasks);
+  const visibilityOfFinishedTasks = useSelector(selectVisibilityOfFinishedTasks);
+  const taskListLength = useSelector(selectTaskListLength);
+  const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
   
   return (
-    taskList.length > 0 && (
+    taskListLength > 0 && (
       <>
         <Button
           onClick={() => dispatch(toggleVisibility())}
@@ -16,7 +24,7 @@ export const Buttons = () => {
         </Button>
         <Button
           onClick={() => dispatch(finishAllTasks())}
-          disabled={taskList.every(({ status }) => status)}
+          disabled={isEveryTaskDone}
         >
           Ukończ wszystkie
         </Button>

@@ -1,24 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const taskListSlice = createSlice({
-  name: 'taskList',
+  name: 'taskListState',
   initialState: {
     taskList: [],
     visibilityOfFinishedTasks: true,
   },
   reducers: {
-    addTask: ({ taskList }, { payload }) => {
-      taskList.push(payload);
+    addTask: ({ taskList }, { payload: task }) => {
+      taskList.push(task);
     },
     toggleVisibility: state => {
       state.visibilityOfFinishedTasks = !state.visibilityOfFinishedTasks;
     },
-    toggleTaskDone: ({ taskList }, { payload }) => {
-      const index = taskList.findIndex(({ id }) => id === payload);
+    toggleTaskDone: ({ taskList }, { payload: taskId }) => {
+      const index = taskList.findIndex(({ id }) => id === taskId);
       taskList[index].status = !taskList[index].status;
     },
-    removeTask: ({ taskList }, { payload }) => {
-      const index = taskList.findIndex(({ id }) => id === payload);
+    removeTask: ({ taskList }, { payload: taskId }) => {
+      const index = taskList.findIndex(({ id }) => id === taskId);
       taskList = taskList.splice(index, 1);
     },
     finishAllTasks: ({ taskList }) => {
@@ -27,6 +27,19 @@ const taskListSlice = createSlice({
   }
 });
 
-export const { addTask, toggleVisibility, toggleTaskDone, removeTask, finishAllTasks } = taskListSlice.actions;
-export const selectTasks = state => state.taskList;
+export const {
+  addTask,
+  toggleVisibility,
+  toggleTaskDone,
+  removeTask,
+  finishAllTasks
+} = taskListSlice.actions;
+
+const selectTaskListState = state => state.taskList;
+
+export const selectTaskList = state => selectTaskListState(state).taskList;
+export const selectVisibilityOfFinishedTasks = state => selectTaskListState(state).visibilityOfFinishedTasks;
+export const selectTaskListLength = state => selectTaskList(state).length;
+export const selectIsEveryTaskDone = state => selectTaskList(state).every(({ status }) => status);
+
 export default taskListSlice.reducer;

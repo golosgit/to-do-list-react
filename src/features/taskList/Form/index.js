@@ -9,10 +9,14 @@ export const Form = () => {
   const [newTaskContent, setNewTaskContent] = useState("");
   const inputRef = useRef(null);
 
+  const setFocus = () => {
+    inputRef.current.focus();
+  };
+
   const onFormSubmit = (event) => {
     event.preventDefault();
     if (!newTaskContent.trim()) {
-      inputRef.current.focus();
+      setFocus();
       return;
     }
     dispatch(addTask({
@@ -21,7 +25,7 @@ export const Form = () => {
       status: false,
     }));
     setNewTaskContent("");
-    inputRef.current.focus();
+    setFocus();
   };
 
   return (
