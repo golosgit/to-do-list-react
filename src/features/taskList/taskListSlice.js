@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {getTaskListFromLocalStorage} from "./taskListLocalStorage";
 
 const taskListSlice = createSlice({
   name: "taskListState",
   initialState: {
-    taskList: [],
+    taskList: getTaskListFromLocalStorage(),
     visibilityOfFinishedTasks: true,
   },
   reducers: {
@@ -31,14 +32,21 @@ const taskListSlice = createSlice({
   },
 });
 
-export const { addTask, toggleVisibility, toggleTaskDone, removeTask, finishAllTasks, fetchExampleTaskList, setTaskList } =
-  taskListSlice.actions;
+export const { 
+  addTask, 
+  toggleVisibility, 
+  toggleTaskDone, 
+  removeTask, 
+  finishAllTasks, 
+  fetchExampleTaskList, 
+  setTaskList 
+} = taskListSlice.actions;
 
-const selectTaskListState = (state) => state.taskList;
+const selectTaskListState = state => state.taskList;
 
-export const selectTaskList = (state) => selectTaskListState(state).taskList;
-export const selectVisibilityOfFinishedTasks = (state) => selectTaskListState(state).visibilityOfFinishedTasks;
-export const selectTaskListLength = (state) => selectTaskList(state).length;
-export const selectIsEveryTaskDone = (state) => selectTaskList(state).every(({ status }) => status);
+export const selectTaskList = state => selectTaskListState(state).taskList;
+export const selectVisibilityOfFinishedTasks = state => selectTaskListState(state).visibilityOfFinishedTasks;
+export const selectTaskListLength = state => selectTaskList(state).length;
+export const selectIsEveryTaskDone = state => selectTaskList(state).every(({ status }) => status);
 
 export default taskListSlice.reducer;
