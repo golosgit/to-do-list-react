@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const taskListSlice = createSlice({
-  name: 'taskListState',
+  name: "taskListState",
   initialState: {
     taskList: [],
     visibilityOfFinishedTasks: true,
@@ -10,7 +10,7 @@ const taskListSlice = createSlice({
     addTask: ({ taskList }, { payload: task }) => {
       taskList.push(task);
     },
-    toggleVisibility: state => {
+    toggleVisibility: (state) => {
       state.visibilityOfFinishedTasks = !state.visibilityOfFinishedTasks;
     },
     toggleTaskDone: ({ taskList }, { payload: taskId }) => {
@@ -22,24 +22,23 @@ const taskListSlice = createSlice({
       taskList = taskList.splice(index, 1);
     },
     finishAllTasks: ({ taskList }) => {
-      taskList.forEach(task => task.status = true);
+      taskList.forEach((task) => (task.status = true));
     },
-  }
+    fetchExampleTaskList: () => {},
+    setTaskList: (state, { payload: taskList }) => {
+      state.taskList = taskList;
+    },
+  },
 });
 
-export const {
-  addTask,
-  toggleVisibility,
-  toggleTaskDone,
-  removeTask,
-  finishAllTasks
-} = taskListSlice.actions;
+export const { addTask, toggleVisibility, toggleTaskDone, removeTask, finishAllTasks, fetchExampleTaskList, setTaskList } =
+  taskListSlice.actions;
 
-const selectTaskListState = state => state.taskList;
+const selectTaskListState = (state) => state.taskList;
 
-export const selectTaskList = state => selectTaskListState(state).taskList;
-export const selectVisibilityOfFinishedTasks = state => selectTaskListState(state).visibilityOfFinishedTasks;
-export const selectTaskListLength = state => selectTaskList(state).length;
-export const selectIsEveryTaskDone = state => selectTaskList(state).every(({ status }) => status);
+export const selectTaskList = (state) => selectTaskListState(state).taskList;
+export const selectVisibilityOfFinishedTasks = (state) => selectTaskListState(state).visibilityOfFinishedTasks;
+export const selectTaskListLength = (state) => selectTaskList(state).length;
+export const selectIsEveryTaskDone = (state) => selectTaskList(state).every(({ status }) => status);
 
 export default taskListSlice.reducer;

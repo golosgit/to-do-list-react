@@ -1,8 +1,8 @@
 import { Content, StyledSection } from "./styled";
 
-export const Section = ({ listSection, title, extraSectionButtons, extraSectionContent }) => (
+export const Section = ({ oneButton, listSection, title, extraSectionButtons, extraSectionContent }) => (
   <StyledSection listSection={listSection}>
-    <Content>
+    <Content oneButton={oneButton}>
       {title}
       {extraSectionButtons}
     </Content>

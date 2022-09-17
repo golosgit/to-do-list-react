@@ -9,6 +9,12 @@ export const Content = styled.h2`
   grid-template-columns: 1fr auto auto;
   grid-gap: 25px;
 
+  ${({ oneButton }) =>
+    oneButton &&
+    css`
+      grid-template-columns: 1fr auto;
+    `}
+
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
     grid-gap: 15px;

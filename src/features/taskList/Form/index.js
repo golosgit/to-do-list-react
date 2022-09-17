@@ -19,11 +19,13 @@ export const Form = () => {
       setFocus();
       return;
     }
-    dispatch(addTask({
-      id: nanoid(),
-      content: newTaskContent.trim(),
-      status: false,
-    }));
+    dispatch(
+      addTask({
+        id: nanoid(),
+        content: newTaskContent.trim(),
+        status: false,
+      })
+    );
     setNewTaskContent("");
     setFocus();
   };
