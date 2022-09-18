@@ -1,15 +1,14 @@
-import { Link } from "react-router-dom";
-import { UpperMenu, MenuItem, Menu } from "./styled";
+import { UpperMenu, MenuItem, Menu, StyledNavLink } from "./styled";
 
 export const Navigation = () => {
   return (
     <UpperMenu>
       <Menu>
         <MenuItem>
-          <Link to="/lista-zadan">Zadania</Link>
+          <StyledNavLink to="/lista-zadan">Zadania</StyledNavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/o-autorze">O autorze</Link>
+          <StyledNavLink to="/o-autorze">O autorze</StyledNavLink>
         </MenuItem>
       </Menu>
     </UpperMenu>

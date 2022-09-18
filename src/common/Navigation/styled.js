@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const UpperMenu = styled.div`
@@ -16,4 +17,13 @@ export const MenuItem = styled.li`
   color: white;
   display: inline;
   padding: 0 20px;
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  color: white;
+  text-decoration: none;
+ 
+  &.active {
+    font-weight: 700;
+  }
 `;
