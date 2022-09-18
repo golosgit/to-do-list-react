@@ -1,0 +1,19 @@
+import styled from "styled-components";
+
+export const UpperMenu = styled.div`
+  background-color: teal;
+  padding: 15px;
+`;
+
+export const Menu = styled.ul`
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+`;
+
+export const MenuItem = styled.li`
+  color: white;
+  display: inline;
+  padding: 0 20px;
+`;

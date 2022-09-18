@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const TaskListWrapper = styled.div`
+  max-width: 950px;
+  margin: 0 auto;
+`;
+
 export const Button = styled.button`
   background-color: white;
   color: hsl(180, 100%, 20%);
