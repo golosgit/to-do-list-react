@@ -4,12 +4,12 @@ import { Buttons } from "./Buttons";
 import { FetchButton } from "./FetchButton";
 import { Section } from "../../common/Section";
 import { Header } from "../../common/Header";
-import { TaskListWrapper } from "./styled";
+import { Wrapper } from "../styled";
 
 export const Tasks = () => {
   return (
     <>
-      <TaskListWrapper>
+      <Wrapper>
         <Header title="Lista zadań" />
         <Section
           oneButton
@@ -23,7 +23,7 @@ export const Tasks = () => {
         extraSectionButtons={<Buttons />} 
         extraSectionContent={<TaskList />} 
         />
-      </TaskListWrapper>
+      </Wrapper>
     </>
   );
 };
