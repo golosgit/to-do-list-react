@@ -15,13 +15,13 @@ export const Tasks = () => {
           oneButton
           title="Dodaj nowe zadanie"
           extraSectionButtons={<FetchButton />}
-          extraSectionContent={<Form />}
+          sectionContent={<Form />}
         />
         <Section 
         listSection 
         title="Lista zadań" 
         extraSectionButtons={<Buttons />} 
-        extraSectionContent={<TaskList />} 
+        sectionContent={<TaskList />} 
         />
       </Wrapper>
     </>

@@ -8,7 +8,7 @@ export const Author = () => {
       <Header title="O autorze" />
       <Section
         title="Grzegorz Gołos"
-        extraSectionContent={
+        sectionContent={
           <>
             <SectionContentWrapper>
               <p>
