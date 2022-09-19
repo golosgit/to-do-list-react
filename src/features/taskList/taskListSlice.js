@@ -49,4 +49,7 @@ export const selectVisibilityOfFinishedTasks = state => selectTaskListState(stat
 export const selectTaskListLength = state => selectTaskList(state).length;
 export const selectIsEveryTaskDone = state => selectTaskList(state).every(({ status }) => status);
 
+export const getTaskById = (state, taskId) => 
+  selectTaskList(state).find(({ id }) => id === taskId);
+
 export default taskListSlice.reducer;

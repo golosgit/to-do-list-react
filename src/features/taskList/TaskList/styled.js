@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const List = styled.ul`
@@ -70,4 +71,13 @@ export const Button = styled.button`
         border-radius: 2px;
       }
     `}
+`;
+
+export const StyledLink = styled(Link)`
+  color: hsl(180, 100%, 20%);
+  text-decoration: none;
+
+  &:hover {
+    color: hsl(180, 100%, 33%);
+  }
 `;
