@@ -2,7 +2,7 @@ import React from "react";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Tasks } from "./features/taskList/Tasks";
 import { Navigation } from "./common/Navigation";
-import { Author } from "./features/author/Author";
+import { Author } from "./features/author/AuthorPage";
 
 export const App = () => {
   return (
