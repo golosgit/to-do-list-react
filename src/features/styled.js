@@ -6,6 +6,6 @@ export const Wrapper = styled.div`
 `;
 
 export const SectionContentWrapper = styled.div`
-  margin: 20px 40px;
-  padding-bottom: 10px;
+  margin: 20px;
+  padding-bottom: 5px;
 `;
