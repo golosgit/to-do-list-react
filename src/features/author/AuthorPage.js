@@ -17,8 +17,9 @@ export const Author = () => {
                 się nad zmianą branży, ale dopiero parę miesięcy temu podjąłem decyzję o spróbowaniu się we Frontendzie.
               </p>
               <p>
-                W wolnych chwilach lubię słuchać muzyki (w szczególności ambient). Pożeraczem czasu są również gry
-                single player, chociaż ostatnio do tego typu rozrywki ciągnie mnie coraz mniej.
+                W wolnych chwilach lubię słuchać muzyki (w szczególności ambient i jego pochodne). Pożeraczem czasu są
+                również gry single player (w tym wypadku prym wiodą RPG-i), chociaż ostatnio do tego typu rozrywki
+                ciągnie mnie coraz mniej.
               </p>
             </SectionContentWrapper>
           </>
