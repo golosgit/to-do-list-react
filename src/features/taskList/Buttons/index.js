@@ -6,6 +6,7 @@ import {
   selectVisibilityOfFinishedTasks,
   selectTaskListLength,
   selectIsEveryTaskDone,
+  removeAllTasks,
 } from "../taskListSlice";
 
 export const Buttons = () => {
@@ -22,6 +23,9 @@ export const Buttons = () => {
         </Button>
         <Button onClick={() => dispatch(finishAllTasks())} disabled={isEveryTaskDone}>
           Ukończ wszystkie
+        </Button>
+        <Button onClick={() => dispatch(removeAllTasks())}>
+          Usuń wszystkie
         </Button>
       </>
     )

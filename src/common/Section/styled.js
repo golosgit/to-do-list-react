@@ -6,7 +6,7 @@ export const Content = styled.h2`
   margin-bottom: 0;
   font-size: 20px;
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto auto auto;
   grid-gap: 25px;
 
   ${({ oneButton }) =>

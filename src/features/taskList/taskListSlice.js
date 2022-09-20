@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getTaskListFromLocalStorage} from "./taskListLocalStorage";
+import { getTaskListFromLocalStorage } from "./taskListLocalStorage";
 
 const taskListSlice = createSlice({
   name: "taskListState",
@@ -29,6 +29,9 @@ const taskListSlice = createSlice({
     setTaskList: (state, { payload: taskList }) => {
       state.taskList = taskList;
     },
+    removeAllTasks: ({taskList}) => {
+      taskList = taskList.splice(0);
+    },
   },
 });
 
@@ -39,7 +42,8 @@ export const {
   removeTask, 
   finishAllTasks, 
   fetchExampleTaskList, 
-  setTaskList 
+  setTaskList,
+  removeAllTasks
 } = taskListSlice.actions;
 
 const selectTaskListState = state => state.taskList;
