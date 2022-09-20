@@ -9,9 +9,6 @@ export const TaskPage = () => {
   const { id } = useParams();
   const task = useSelector(state => getTaskById(state, id));
 
-  console.log(id);
-  console.log(task);
-
   return (
     <Wrapper>
       <Header title="Szczegóły zadania"/>
