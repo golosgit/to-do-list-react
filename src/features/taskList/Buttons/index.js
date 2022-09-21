@@ -19,7 +19,7 @@ export const Buttons = () => {
     taskListLength > 0 && (
       <>
         <Button onClick={() => dispatch(toggleVisibility())}>
-          {visibilityOfFinishedTasks ? "Ukryj" : "Pokaż"}&nbsp;ukończone
+          {visibilityOfFinishedTasks ? "Ukryj " : "Pokaż "}ukończone
         </Button>
         <Button onClick={() => dispatch(finishAllTasks())} disabled={isEveryTaskDone}>
           Ukończ wszystkie
