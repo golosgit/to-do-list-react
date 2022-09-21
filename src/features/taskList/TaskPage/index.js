@@ -9,16 +9,32 @@ export const TaskPage = () => {
   const { id } = useParams();
   const task = useSelector(state => getTaskById(state, id));
 
+  if(task){
+    return (
+      <Wrapper>
+        <Header title="Szczegóły zadania"/>
+        <Section 
+          title={task.content} 
+          sectionContent={
+            <SectionContentWrapper>
+              <p>
+                <strong>Status zadania: </strong>{task.status ? "Ukończone" : "Nie ukończone"}
+              </p>          
+            </SectionContentWrapper>
+          }
+        />
+      </Wrapper>
+    );
+  }
+
   return (
     <Wrapper>
       <Header title="Szczegóły zadania"/>
       <Section 
-        title={task ? task.content : "Błąd! Nie znaleziono zadania!"} 
+        title={"Błąd! Nie znaleziono zadania!"} 
         sectionContent={
           <SectionContentWrapper>
-            <p>
-              <strong>Status zadania: </strong>{task.status ? "Ukończone" : "Nie ukończone"}
-            </p>          
+            <p></p>          
           </SectionContentWrapper>
         }
       />
