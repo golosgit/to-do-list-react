@@ -5,6 +5,7 @@ import { FetchButton } from "./FetchButton";
 import { Section } from "../../common/Section";
 import { Header } from "../../common/Header";
 import { Wrapper } from "../styled";
+import { Search } from "./Search";
 
 export const Tasks = () => {
   return (
@@ -17,11 +18,15 @@ export const Tasks = () => {
           extraSectionButtons={<FetchButton />}
           sectionContent={<Form />}
         />
-        <Section 
-        listSection 
-        title="Lista zadań" 
-        extraSectionButtons={<Buttons />} 
-        sectionContent={<TaskList />} 
+        <Section
+          title="Wyszukaj zadanie"
+          sectionContent={<Search />}
+        />
+        <Section
+          listSection
+          title="Lista zadań"
+          extraSectionButtons={<Buttons />}
+          sectionContent={<TaskList />}
         />
       </Wrapper>
     </>

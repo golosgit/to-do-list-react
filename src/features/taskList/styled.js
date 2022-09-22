@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Button = styled.button`
   background-color: white;
@@ -21,4 +21,14 @@ export const Button = styled.button`
     border: 2px solid transparent;
     cursor: not-allowed;
   }
+`;
+
+export const Input = styled.input`
+  padding: 8px;
+
+  ${({ fullsize }) =>
+    fullsize &&
+    css`
+      width: 100%;
+    `}
 `;
