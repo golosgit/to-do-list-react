@@ -2,11 +2,13 @@ import { useHistory, useLocation } from "react-router-dom"
 import { InputWrapper } from "./styled";
 import { Input } from "../styled";
 import searchQueryParamName from "../searchQueryParamName";
+import { useQueryParameter } from "../queryParameters";
 
 export const Search = () => {
   const location = useLocation();
   const history = useHistory();
-  const query = new URLSearchParams(location.search).get(searchQueryParamName);
+
+  const query = useQueryParameter(searchQueryParamName);
 
   const onInputChange = ({target}) => {
     const searchParams = new URLSearchParams(location.search);
