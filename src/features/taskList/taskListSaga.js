@@ -1,14 +1,16 @@
-import { takeLatest, call, put, takeEvery, select } from "redux-saga/effects";
-import { fetchExampleTaskList, selectTaskList, setTaskList } from "./taskListSlice";
+import { takeLatest, call, put, takeEvery, select, delay } from "redux-saga/effects";
+import { fetchExampleTaskList, fetchExampleTaskListSuccess, fetchExampleTaskListError, selectTaskList } from "./taskListSlice";
 import { getExampleTaskList } from "./getExampleTaskList";
 import { saveTaskListInLocalStorage } from "./taskListLocalStorage";
 
 function* fetchExampleTaskListHandler() {
   try {
+    yield delay(1500);
     const exampleTaskList = yield call(getExampleTaskList);
-    yield put(setTaskList(exampleTaskList));
+    yield put(fetchExampleTaskListSuccess(exampleTaskList));
   } catch (error) {
-    yield call(alert, "Error");
+    yield put(fetchExampleTaskListError());
+    yield call(alert, "Wystąpił błąd!");
   }
 }
 
