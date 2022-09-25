@@ -4,22 +4,26 @@
 - [General info](#general-info)
 - [Technologies](#technologies)
 - [Available scripts](#available-scripts)
+
 ## Demo
 
 https://golosgit.github.io/to-do-list-react/
 
 ## General info
 
-Simple to do list that help with managing tasks (add, delete, toggle done/undone). 
+Simple to do list that helps with managing tasks. You can add, delete, toggle done/undone and download example tasks. 
+There's also simple search engine that filter through all tasks.
 
 ## Technologies
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Project was created with:
 
 - HTML
-- CSS (BEM, grid, media queries)
-- JavaScript (React)
+- CSS (media queries, grid)
+- React (Create-React-App, React Router, Redux Toolkit, Redux Saga)
+- Styled Components
 
 ## Available scripts
 
