@@ -4,6 +4,7 @@ import { Tasks } from "./features/taskList/Tasks";
 import { Navigation } from "./common/Navigation";
 import { Author } from "./features/author/AuthorPage";
 import { TaskPage } from "./features/taskList/TaskPage";
+import { toAuthor, toTask, toTaskList } from "./routes";
 
 export const App = () => {
   return (
@@ -11,17 +12,17 @@ export const App = () => {
       <HashRouter>
         <Navigation />
         <Switch>
-          <Route path="/zadanie/:id">
+          <Route path={toTask()}>
             <TaskPage />
           </Route>
-          <Route path="/lista-zadan">
+          <Route path={toTaskList()}>
             <Tasks />
           </Route>
-          <Route path="/o-autorze">
+          <Route path={toAuthor()}>
             <Author />
           </Route>
           <Route path="/">
-            <Redirect to="/lista-zadan" />
+            <Redirect to={toTaskList()} />
           </Route>
         </Switch>
       </HashRouter>

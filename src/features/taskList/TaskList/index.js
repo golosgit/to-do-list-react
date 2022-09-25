@@ -3,6 +3,7 @@ import { List, ListItem, Content, Button, StyledLink } from "./styled";
 import { removeTask, toggleTaskDone, selectVisibilityOfFinishedTasks, selectTasksByQuery } from "../taskListSlice";
 import searchQueryParamName from "../searchQueryParamName";
 import { useQueryParameter } from "../queryParameters";
+import { toTask } from "../../../routes";
 
 export const TaskList = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ export const TaskList = () => {
             {task.status ? "✓" : ""}
           </Button>
           <Content done={task.status}>
-            <StyledLink to={`/zadanie/${task.id}`}>{task.content}</StyledLink>
+            <StyledLink to={toTask({ id: task.id} )}>{task.content}</StyledLink>
           </Content>
           <Button onClick={() => dispatch(removeTask(task.id))} remove>
             🗑
