@@ -4,7 +4,7 @@ import { Header } from "../../../common/Header";
 import { Section } from "../../../common/Section";
 import { Wrapper } from "../../../common/Wrapper/styled";
 import { SectionContentWrapper } from "../../../common/SectionContentWrapper/styled";
-import { StyledStrong } from "./styled";
+import { TaskStatusLabel } from "./styled";
 import { getTaskById } from "../taskListSlice";
 
 export const TaskPage = () => {
@@ -21,7 +21,7 @@ export const TaskPage = () => {
             <>
               <SectionContentWrapper>
                 <p>
-                  <StyledStrong>Status zadania: </StyledStrong>
+                  <TaskStatusLabel>Status zadania: </TaskStatusLabel>
                   {task.status ? "Ukończono" : "Nie ukończono"}
                 </p>
               </SectionContentWrapper>
