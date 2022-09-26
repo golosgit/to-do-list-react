@@ -16,10 +16,12 @@ export const Form = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+
     if (!newTaskContent.trim()) {
       setFocus();
       return;
     }
+
     dispatch(
       addTask({
         id: nanoid(),
@@ -27,6 +29,7 @@ export const Form = () => {
         status: false,
       })
     );
+    
     setNewTaskContent("");
     setFocus();
   };

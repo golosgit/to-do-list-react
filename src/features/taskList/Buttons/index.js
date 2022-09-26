@@ -1,5 +1,5 @@
-import { Button } from "../styled";
 import { useSelector, useDispatch } from "react-redux";
+import { Button } from "../styled";
 import {
   toggleVisibility,
   finishAllTasks,

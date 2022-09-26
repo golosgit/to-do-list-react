@@ -1,7 +1,3 @@
-import { HeaderTitle } from "./styled";
+import { MainHeader } from "./styled";
 
-export const Header = ({ title }) => (
-  <HeaderTitle>
-    <h1>{title}</h1>
-  </HeaderTitle>
-);
+export const Header = ({ title }) => <MainHeader>{title}</MainHeader>;
