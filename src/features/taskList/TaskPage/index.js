@@ -2,7 +2,8 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Header } from "../../../common/Header";
 import { Section } from "../../../common/Section";
-import { SectionContentWrapper, Wrapper } from "../../styled";
+import { Wrapper } from "../../../common/Wrapper/styled";
+import { SectionContentWrapper } from "../../../common/SectionContentWrapper/styled";
 import { getTaskById } from "../taskListSlice";
 
 export const TaskPage = () => {

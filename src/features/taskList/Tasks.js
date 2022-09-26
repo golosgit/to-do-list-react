@@ -4,7 +4,7 @@ import { Buttons } from "./Buttons";
 import { FetchButton } from "./FetchButton";
 import { Section } from "../../common/Section";
 import { Header } from "../../common/Header";
-import { Wrapper } from "../styled";
+import { Wrapper } from "../../common/Wrapper/styled";
 import { Search } from "./Search";
 
 export const Tasks = () => {

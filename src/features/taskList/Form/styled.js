@@ -12,7 +12,7 @@ export const FormBody = styled.form`
   }
 `;
 
-export const Button = styled.button`
+export const FormButton = styled.button`
   background-color: teal;
   color: #fff;
   border: 2px solid teal;

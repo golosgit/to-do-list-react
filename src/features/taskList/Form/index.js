@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 import { useDispatch } from "react-redux/es/exports";
 import { nanoid } from "@reduxjs/toolkit";
-import { FormBody, Button } from "./styled";
-import { Input } from "../styled";
+import { FormBody, FormButton } from "./styled";
+import { Input } from "../../../common/Input/styled";
 import { addTask } from "../taskListSlice";
 
 export const Form = () => {
@@ -43,7 +43,7 @@ export const Form = () => {
         onChange={({ target }) => setNewTaskContent(target.value)}
         placeholder="Co jest do zrobienia?"
       />
-      <Button>Dodaj zadanie</Button>
+      <FormButton>Dodaj zadanie</FormButton>
     </FormBody>
   );
 };
