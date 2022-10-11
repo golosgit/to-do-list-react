@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #e1e1e1;
+    background-color: ${({ theme }) => theme.color.mercury};
     line-height: 1.5;
     font-family: "Montserrat", sans-serif;
     overflow-wrap: anywhere;

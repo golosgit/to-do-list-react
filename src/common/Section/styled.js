@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Content = styled.h2`
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid ${({ theme }) => theme.color.mercury};
   padding: 15px 20px;
   margin-bottom: 0;
   font-size: 20px;
@@ -22,7 +22,7 @@ export const Content = styled.h2`
 `;
 
 export const StyledSection = styled.section`
-  background-color: white;
+  background-color: ${({ theme }) => theme.color.white};
   margin: 0 20px;
 
   ${({ listSection }) =>

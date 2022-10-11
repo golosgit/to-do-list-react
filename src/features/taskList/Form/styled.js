@@ -13,20 +13,20 @@ export const FormBody = styled.form`
 `;
 
 export const FormButton = styled.button`
-  background-color: teal;
-  color: #fff;
-  border: 2px solid teal;
+  background-color: ${({ theme }) => theme.color.teal};
+  color: ${({ theme }) => theme.color.white};;
+  border: 2px solid ${({ theme }) => theme.color.teal};
   padding: 8px;
   transition: 0.3s;
 
   &:hover {
-    background-color: hsl(180, 100%, 35%);
-    border-color: hsl(180, 100%, 35%);
+    background-color: ${({ theme }) => theme.color.blueStone};
+    border-color: ${({ theme }) => theme.color.blueStone};
     transform: scale(1.05);
   }
 
   &:active {
-    border-color: #333;
+    border-color: ${({ theme }) => theme.color.mineShaft};
     border-radius: 2px;
   }
 `;

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const UpperMenu = styled.div`
-  background-color: teal;
+  background-color: ${({ theme }) => theme.color.teal};
   padding: 15px;
 `;
 
@@ -14,13 +14,13 @@ export const Menu = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  color: white;
+  color: ${({ theme }) => theme.color.white};
   display: inline;
   padding: 0 20px;
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: white;
+  color: ${({ theme }) => theme.color.white};
   text-decoration: none;
 
   &:hover {

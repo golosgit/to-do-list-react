@@ -8,7 +8,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid ${({ theme }) => theme.color.mercury};
   padding: 10px;
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -33,22 +33,22 @@ export const Content = styled.span`
 export const Button = styled.button`
   height: 30px;
   width: 30px;
-  color: white;
+  color: ${({ theme }) => theme.color.white};
 
   ${({ toggleDone }) =>
     toggleDone &&
     css`
-      background-color: green;
-      border: 2px solid green;
+      background-color: ${({ theme }) => theme.color.japaneseLaurel};
+      border: 2px solid ${({ theme }) => theme.color.japaneseLaurel};
       transition: 0.3s;
 
       &:hover {
-        background-color: hsl(120, 100%, 35%);
-        border-color: hsl(120, 100%, 35%);
+        background-color: ${({ theme }) => theme.color.green};
+        border-color: ${({ theme }) => theme.color.green};
       }
 
       &:active {
-        border-color: #333;
+        border-color: ${({ theme }) => theme.color.mineShaft};
         border-radius: 2px;
       }
     `}
@@ -56,28 +56,28 @@ export const Button = styled.button`
   ${({ remove }) =>
     remove &&
     css`
-      background-color: red;
-      border: 2px solid red;
+      background-color: ${({ theme }) => theme.color.red};
+      border: 2px solid ${({ theme }) => theme.color.red};
       transition: 0.3s;
 
       &:hover {
-        background-color: hsl(0, 100%, 75%);
-        border-color: hsl(0, 100%, 75%);
+        background-color: ${({ theme }) => theme.color.vividTangerine};
+        border-color: ${({ theme }) => theme.color.vividTangerine};
         transform: scale(1.1);
       }
 
       &:active {
-        border-color: #333;
+        border-color: ${({ theme }) => theme.color.mineShaft};
         border-radius: 2px;
       }
     `}
 `;
 
 export const StyledLink = styled(Link)`
-  color: hsl(180, 100%, 20%);
+  color: ${({ theme }) => theme.color.blueStone};
   text-decoration: none;
 
   &:hover {
-    color: hsl(180, 100%, 33%);
+    color: ${({ theme }) => theme.color.persianGreen};
   }
 `;
